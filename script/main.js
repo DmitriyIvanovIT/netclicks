@@ -121,7 +121,7 @@ const renderCard = response => {
             for (let i = 1; i <= 7; i++) {
                 plagination.innerHTML += `<li><a href="#" class="pages">${i}</a></li>`;
             };
-        } else {
+        } else if (response.total_pages > 7){
             for (let i = 1; i <= 7; i++) {
                 plagination.innerHTML += `<li><a href="#" class="pages">${i}</a></li>`;
             };
