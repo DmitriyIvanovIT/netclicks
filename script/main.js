@@ -118,7 +118,7 @@ const renderCard = response => {
         });
 
         if (response.total_pages > 1 && response.total_pages < 7) {
-            for (let i = 1; i <= response.total_pages.length; i++) {
+            for (let i = 1; i <= response.total_pages; i++) {
                 plagination.innerHTML += `<li><a href="#" class="pages">${i}</a></li>`;
             };
         } else if (response.total_pages > 7){
