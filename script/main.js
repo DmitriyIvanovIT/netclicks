@@ -120,15 +120,11 @@ const renderCard = response => {
         if (response.total_pages > 1 && response.total_pages < 7) {
             for (let i = 1; i <= 7; i++) {
                 plagination.innerHTML += `<li><a href="#" class="pages">${i}</a></li>`;
-            }
-
-            ;
+            };
         } else {
             for (let i = 1; i <= 7; i++) {
                 plagination.innerHTML += `<li><a href="#" class="pages">${i}</a></li>`;
-            }
-
-            ;
+            };
             plagination.innerHTML += `<li><a href="#" class="pages">Далее</a></li>`;
         }
     }
@@ -201,9 +197,7 @@ const toggleMenu = () => {
             }
 
             ;
-        }
-
-        ;
+        };
     },
     closeDropdown = () => {
         dropdown.forEach(item => {
@@ -221,9 +215,7 @@ document.addEventListener('click', event => {
         leftMenu.classList.remove('openMenu');
         hamburger.classList.remove('open');
         closeDropdown();
-    }
-
-    ;
+    };
 });
 leftMenu.addEventListener('click', openDropDown);
 
@@ -246,20 +238,17 @@ tvShowsList.addEventListener('click', event => {
 
             if (data.genres !== 0) {
                 data.genres.forEach(item => genresList.innerHTML += `<li>${item.name}</li>`);
-            }
-
-            ;
+            };
+            
             rating.textContent = data.vote_average ? data.vote_average : 'Рейтинг отсутствует';
             description.textContent = data.overview ? data.overview : 'Описание отсутствует';
             modalLink.href = data.homepage ? data.homepage : '#';
         }).then(() => {
             document.body.style.overflow = 'hidden';
             modal.classList.remove('hide');
-            tvShows.remove();
+            loading.remove();
         });
-    }
-
-    ;
+    };
 });
 
 plagination.addEventListener('click', event => {
@@ -276,11 +265,9 @@ modal.addEventListener('click', event => {
     if (event.target.closest('.cross') || event.target.classList.contains('modal')) {
         document.body.style.overflow = '';
         modal.classList.add('hide');
-        document.location.href = 'index.html';
-    }
-
-    ;
+    };
 });
+
 document.addEventListener('DOMContentLoaded', () => {
     fetch(`${serv}/tv/airing_today?api_key=${api}&language=ru`).then(res => {
         tvShows.append(loading);
