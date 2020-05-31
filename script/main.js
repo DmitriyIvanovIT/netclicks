@@ -62,7 +62,7 @@ class DBService {
             return this.getData(this.temp + '&page=' + page);
         });
 
-        _defineProperty(this, "getTVShov", id => {
+        _defineProperty(this, "getTVShow", id => {
             this.temp = `${this.SERVER}/tv/${id}?api_key=${this.API_KEY}&language=ru-RU`;
             return this.getData(this.temp);
         });
