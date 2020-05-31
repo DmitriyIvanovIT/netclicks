@@ -230,7 +230,7 @@ tvShowsList.addEventListener('click', event => {
 
     if (card) {
         tvShows.append(loading);
-        dbService.getTVShov(card.id).then(data => {
+        dbService.getTVShow(card.id).then(data => {
             tvCardImg.src = data.poster_path ? imgURL + data.poster_path : 'img/no-poster.jpg';
             tvCardImg.alt = data.name;
             modalTitle.textContent = data.name;
